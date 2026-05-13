@@ -1,0 +1,25 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 [chromium] › tests\example.spec.ts:3:5 › has title (1.0m)
+
+
+  1) [chromium] › tests\example.spec.ts:3:5 › has title ────────────────────────────────────────────
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: page.waitForLoadState: Test timeout of 60000ms exceeded.
+
+      25 |   await expect(myProfileMenuItem).toBeVisible({ timeout: 30000 });
+      26 |   await myProfileMenuItem.click();
+    > 27 |   await page.waitForLoadState('networkidle');
+         |              ^
+      28 |
+      29 |   await expect(page.getByRole('heading', { name: /My Profile|Profile/i })).toBeVisible({ timeout: 30000 });
+      30 |   const updateProfileAction = page.locator('button:has-text("Update Profile"), text=Update Profile');
+        at c:\Users\rahul.malviya\Desktop\Mailzzy\tests\example.spec.ts:27:14
+
+    Error Context: test-results\example-has-title-chromium\error-context.md
+
+  1 failed
+    [chromium] › tests\example.spec.ts:3:5 › has title ─────────────────────────────────────────────

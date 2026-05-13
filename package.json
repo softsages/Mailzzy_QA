@@ -1,0 +1,25 @@
+{
+  "name": "mailzzy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:all": "npx playwright test --project=chromium,firefox,webkit",
+    "allure:generate": "allure generate allure-results --clean",
+    "allure:open": "allure open allure-results",
+    "mcp-server": "node ./mcp-server.js",
+    "mcp-run": "node ./mcp-server.js run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.2",
+    "allure-commandline": "^2.29.0",
+    "allure-playwright": "^3.7.2"
+  }
+}

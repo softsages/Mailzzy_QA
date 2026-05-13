@@ -1,0 +1,67 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: login.spec.ts >> Authentication >> should log in with valid credentials
+- Location: tests\login.spec.ts:6:7
+
+# Error details
+
+```
+Test timeout of 60000ms exceeded.
+```
+
+```
+Error: page.goto: Test timeout of 60000ms exceeded.
+Call log:
+  - navigating to "https://send-uat.mailzzy.com/", waiting until "load"
+
+```
+
+# Test source
+
+```ts
+  1  | import { expect, Page } from '@playwright/test';
+  2  | 
+  3  | export class LoginPage {
+  4  |   readonly page: Page;
+  5  |   readonly emailInput;
+  6  |   readonly passwordInput;
+  7  |   readonly loginButton;
+  8  |   readonly welcomeMessage;
+  9  |   readonly userMenuButton;
+  10 | 
+  11 |   constructor(page: Page) {
+  12 |     this.page = page;
+  13 |     this.emailInput = page.getByPlaceholder('Enter Business Email');
+  14 |     this.passwordInput = page.getByPlaceholder('Enter Password');
+  15 |     this.loginButton = page.getByRole('button', { name: 'Log In' });
+  16 |     this.welcomeMessage = page.locator('text=/welcome/i');
+  17 |     this.userMenuButton = page.getByRole('button', { name: 'User account menu' });
+  18 |   }
+  19 | 
+  20 |   async goto() {
+> 21 |     await this.page.goto('/');
+     |                     ^ Error: page.goto: Test timeout of 60000ms exceeded.
+  22 |   }
+  23 | 
+  24 |   async login(email: string, password: string) {
+  25 |     await this.emailInput.fill(email);
+  26 |     await this.passwordInput.fill(password);
+  27 |     await this.loginButton.click();
+  28 |   }
+  29 | 
+  30 |   async expectLoggedIn() {
+  31 |     await this.page.waitForURL('**/dashboard');
+  32 |   }
+  33 | 
+  34 |   async openUserMenu() {
+  35 |     await expect(this.userMenuButton).toBeVisible({ timeout: 30000 });
+  36 |     await this.userMenuButton.click();
+  37 |   }
+  38 | }
+```

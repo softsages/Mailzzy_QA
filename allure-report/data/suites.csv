@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","25527","should log in with valid credentials","firefox","2026-05-11","passed","2026-05-11","Authentication","login.spec.ts","",""
+"","15810","should log in with valid credentials","webkit","2026-05-11","passed","2026-05-11","Authentication","login.spec.ts","",""
+"","23282","should open the profile page from the user menu","firefox","2026-05-11","passed","2026-05-11","User profile","profile.spec.ts","",""
+"","20600","should open the profile page from the user menu","webkit","2026-05-11","passed","2026-05-11","User profile","profile.spec.ts","",""
+"","15221","should open the profile page from the user menu","chromium","2026-05-11","passed","2026-05-11","User profile","profile.spec.ts","",""
+"","16047","should log in with valid credentials","chromium","2026-05-11","passed","2026-05-11","Authentication","login.spec.ts","",""

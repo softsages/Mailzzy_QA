@@ -1,0 +1,7 @@
+{
+  "port": 3999,
+  "playwrightProject": "chromium",
+  "playwrightReporter": "list",
+  "playwrightTimeout": 60000,
+  "defaultTestPath": "tests/example.spec.ts"
+}
