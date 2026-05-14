@@ -14,6 +14,8 @@ test.describe('User profile', () => {
     await loginPage.expectLoggedIn();
     await loginPage.openUserMenu();
     // await profilePage.openMyProfile();
+    //new comment line in profile.spec.ts file
+    //One more commit line for demo purpose
    
     
   });
